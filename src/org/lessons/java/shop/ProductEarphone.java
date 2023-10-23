@@ -5,14 +5,14 @@ import java.math.BigDecimal;
 public class ProductEarphone extends Product{
     // attributes
     private String colorEarphone;
-    private boolean wirelessEarphone;
+    private boolean cabledEarphones;
 
 
     // constructor
 
-    public ProductEarphone(String nameProduct, String descriptionProduct, BigDecimal priceProduct, BigDecimal ivaProduct, String colorEarphone, boolean wirelessEarphone) {
+    public ProductEarphone(String nameProduct, String descriptionProduct, BigDecimal priceProduct, BigDecimal ivaProduct, String colorEarphone, boolean cabledEarphones) {
         super(nameProduct, descriptionProduct, priceProduct, ivaProduct);
         this.colorEarphone = colorEarphone;
-        this.wirelessEarphone = wirelessEarphone;
+        this.cabledEarphones = cabledEarphones;
     }
 }

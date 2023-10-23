@@ -15,4 +15,10 @@ public class ProductTelevision extends Product{
         this.dimensionTelevision = dimensionTelevision;
         this.smartTelevision = smartTelevision;
     }
+
+    // methods
+    @Override
+    public String toString() {
+        return super.toString() + ", Dimension: " + dimensionTelevision + ", Smart: " + smartTelevision;
+    }
 }

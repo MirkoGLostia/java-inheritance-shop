@@ -15,4 +15,11 @@ public class ProductEarphone extends Product{
         this.colorEarphone = colorEarphone;
         this.cabledEarphones = cabledEarphones;
     }
+
+
+    // methods
+    @Override
+    public String toString() {
+        return super.toString() + ", Color: " + colorEarphone + ", Cabled: " + cabledEarphones;
+    }
 }

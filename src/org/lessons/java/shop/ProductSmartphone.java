@@ -23,4 +23,10 @@ public class ProductSmartphone extends Product {
 
 
     // methods
+
+
+    @Override
+    public String toString() {
+        return super.toString() + ", IMEI: " + codeIMEI + ", Memory: " + memoryCapacity;
+    }
 }

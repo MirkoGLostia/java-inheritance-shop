@@ -85,7 +85,11 @@ public class Product {
     }
 
     public BigDecimal getDiscount(boolean arg) {
-        return new BigDecimal(2).multiply(new BigDecimal(100));
+        BigDecimal value = new BigDecimal(0);
+        if (arg){
+            value = getFullPrice().multiply(new BigDecimal(2).divide(new BigDecimal(100)));
+        }
+        return value;
     }
 
     @Override

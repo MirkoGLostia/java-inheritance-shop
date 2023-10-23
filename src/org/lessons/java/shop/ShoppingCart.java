@@ -25,7 +25,7 @@ public class ShoppingCart {
 
         System.out.println("Welcome!!");
 
-        System.out.println("Are you a premium member?");
+        System.out.println("Are you a premium member? (true/false)");
         premiumMember = Boolean.parseBoolean(userInput.nextLine());
 
         do {
@@ -115,9 +115,10 @@ public class ShoppingCart {
 
         System.out.println("the total is:");
         for (int i = 0; i < listOfProducts.length; i++) {
-            BigDecimal productValue = listOfProducts[i].getFullPrice().multiply(listOfProducts[i].getDiscount(premiumMember));
-            total.add(productValue);
+            total = total.add(listOfProducts[i].getFullPrice().subtract(listOfProducts[i].getDiscount(premiumMember)));
         }
+
+        System.out.println(total);
 
 
         userInput.close();

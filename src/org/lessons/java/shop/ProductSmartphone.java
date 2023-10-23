@@ -28,12 +28,13 @@ public class ProductSmartphone extends Product {
     public String toString() {
         return super.toString() + ", IMEI: " + codeIMEI + ", Memory: " + memoryCapacity;
     }
+
     public BigDecimal getDiscount(boolean arg) {
-        BigDecimal discountValue = super.getDiscount(true);
+        BigDecimal value = super.getDiscount(arg);
         if (memoryCapacity < 32){
-            discountValue = new BigDecimal(2).multiply(new BigDecimal(100));
+            value = getFullPrice().multiply(new BigDecimal(5).divide(new BigDecimal(100)));
         }
-        return discountValue;
+        return value;
     }
 
 }

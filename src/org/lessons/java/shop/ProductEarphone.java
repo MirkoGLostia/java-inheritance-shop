@@ -24,10 +24,10 @@ public class ProductEarphone extends Product{
         return super.toString() + ", Color: " + colorEarphone + ", Cabled: " + cabledEarphones;
     }
     public BigDecimal getDiscount(boolean arg) {
-        BigDecimal discountValue = super.getDiscount(true);
+        BigDecimal value = super.getDiscount(arg);
         if (cabledEarphones){
-            discountValue = new BigDecimal(7).multiply(new BigDecimal(100));
+            value = getFullPrice().multiply(new BigDecimal(7).divide(new BigDecimal(100)));
         }
-        return discountValue;
+        return value;
     }
 }

@@ -24,10 +24,10 @@ public class ProductTelevision extends Product{
         return super.toString() + ", Dimension: " + dimensionTelevision + ", Smart: " + smartTelevision;
     }
     public BigDecimal getDiscount(boolean arg) {
-        BigDecimal discountValue = super.getDiscount(true);
+        BigDecimal value = super.getDiscount(arg);
         if (!smartTelevision){
-            discountValue = new BigDecimal(10).multiply(new BigDecimal(100));
+            value = getFullPrice().multiply(new BigDecimal(10).divide(new BigDecimal(100)));
         }
-        return discountValue;
+        return value;
     }
 }

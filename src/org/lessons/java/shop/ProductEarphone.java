@@ -18,8 +18,16 @@ public class ProductEarphone extends Product{
 
 
     // methods
+
     @Override
     public String toString() {
         return super.toString() + ", Color: " + colorEarphone + ", Cabled: " + cabledEarphones;
+    }
+    public BigDecimal getDiscount(boolean arg) {
+        BigDecimal discountValue = super.getDiscount(true);
+        if (cabledEarphones){
+            discountValue = new BigDecimal(7).multiply(new BigDecimal(100));
+        }
+        return discountValue;
     }
 }

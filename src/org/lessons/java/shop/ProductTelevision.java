@@ -17,8 +17,17 @@ public class ProductTelevision extends Product{
     }
 
     // methods
+
+
     @Override
     public String toString() {
         return super.toString() + ", Dimension: " + dimensionTelevision + ", Smart: " + smartTelevision;
+    }
+    public BigDecimal getDiscount(boolean arg) {
+        BigDecimal discountValue = super.getDiscount(true);
+        if (!smartTelevision){
+            discountValue = new BigDecimal(10).multiply(new BigDecimal(100));
+        }
+        return discountValue;
     }
 }

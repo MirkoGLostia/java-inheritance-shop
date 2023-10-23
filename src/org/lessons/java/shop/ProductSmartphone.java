@@ -21,7 +21,6 @@ public class ProductSmartphone extends Product {
         this.codeIMEI = randomNumber.nextInt(1, 9999999);
     }
 
-
     // methods
 
 
@@ -29,4 +28,12 @@ public class ProductSmartphone extends Product {
     public String toString() {
         return super.toString() + ", IMEI: " + codeIMEI + ", Memory: " + memoryCapacity;
     }
+    public BigDecimal getDiscount(boolean arg) {
+        BigDecimal discountValue = super.getDiscount(true);
+        if (memoryCapacity < 32){
+            discountValue = new BigDecimal(2).multiply(new BigDecimal(100));
+        }
+        return discountValue;
+    }
+
 }

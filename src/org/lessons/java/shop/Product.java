@@ -84,6 +84,10 @@ public class Product {
         return codeProduct + "-" + nameProduct;
     }
 
+    public BigDecimal getDiscount(boolean arg) {
+        return new BigDecimal(2).multiply(new BigDecimal(100));
+    }
+
     @Override
     public String toString() {
         return getExtendedName() + " costs: " + getFullPrice();

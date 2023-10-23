@@ -15,6 +15,8 @@ public class ShoppingCart {
         int typeOfProduct = 0;
         boolean exitCode = false;
         boolean errorCodeTypeProduct = false;
+        boolean premiumMember = false;
+        BigDecimal total = new BigDecimal(0);
         String moreProducts = "";
         String name = "";
         String description = "";
@@ -22,6 +24,9 @@ public class ShoppingCart {
         BigDecimal iva = new BigDecimal(0);
 
         System.out.println("Welcome!!");
+
+        System.out.println("Are you a premium member?");
+        premiumMember = Boolean.parseBoolean(userInput.nextLine());
 
         do {
             System.out.println("what product are you inserting?");
@@ -106,6 +111,12 @@ public class ShoppingCart {
         System.out.println("thi is the list of products you inserted");
         for (int i = 0; i < listOfProducts.length; i++) {
             System.out.println(listOfProducts[i]);
+        }
+
+        System.out.println("the total is:");
+        for (int i = 0; i < listOfProducts.length; i++) {
+            BigDecimal productValue = listOfProducts[i].getFullPrice().multiply(listOfProducts[i].getDiscount(premiumMember));
+            total.add(productValue);
         }
 
 

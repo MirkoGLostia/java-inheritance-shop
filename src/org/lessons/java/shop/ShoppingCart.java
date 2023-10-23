@@ -1,9 +1,7 @@
 package org.lessons.java.shop;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class ShoppingCart {
@@ -12,12 +10,12 @@ public class ShoppingCart {
 
         // variables
         Product[] listOfProducts = {};
-        int typeOfProduct = 0;
+        int typeOfProduct;
         boolean exitCode = false;
         boolean errorCodeTypeProduct = false;
-        boolean premiumMember = false;
+        boolean premiumMember;
         BigDecimal total = new BigDecimal(0);
-        String moreProducts = "";
+        String moreProducts;
         String name = "";
         String description = "";
         BigDecimal price = new BigDecimal(0);
@@ -115,7 +113,7 @@ public class ShoppingCart {
 
         System.out.println("the total is:");
         for (int i = 0; i < listOfProducts.length; i++) {
-            total = total.add(listOfProducts[i].getFullPrice().subtract(listOfProducts[i].getDiscount(premiumMember)));
+            total = total.add(listOfProducts[i].getFullPrice().subtract(listOfProducts[i].getDiscount(premiumMember))).setScale(2, RoundingMode.HALF_EVEN);
         }
 
         System.out.println(total);

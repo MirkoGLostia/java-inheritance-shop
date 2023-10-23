@@ -6,11 +6,11 @@ import java.util.Random;
 
 public class Product {
     // attributes
-    private int codeProduct;
-    private String nameProduct;
-    private String descriptionProduct;
-    private BigDecimal priceProduct;
-    private BigDecimal ivaProduct;
+    protected int codeProduct;
+    protected String nameProduct;
+    protected String descriptionProduct;
+    protected BigDecimal priceProduct;
+    protected BigDecimal ivaProduct;
 
 
 

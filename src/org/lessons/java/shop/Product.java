@@ -80,4 +80,13 @@ public class Product {
         return priceProduct.add(priceProduct.multiply(ivaProduct.divide(new BigDecimal(100)))).setScale(2, RoundingMode.HALF_EVEN);
     }
 
+    public String getExtendedName() {
+        return codeProduct + "-" + nameProduct;
+    }
+
+    @Override
+    public String toString() {
+        return getExtendedName() + " costs: " + getFullPrice();
+    }
+
 }

@@ -7,15 +7,45 @@ public class ShoppingCart {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        Product product1 = new Product("pappa", "fsdofkjslf", new BigDecimal(29.99), new BigDecimal(22.00));
+        // variables
+        int typeOfProduct = 0;
+        boolean exitCode = false;
+        boolean errorCodeTypeProduct = false;
+        String name;
+        String description;
+        BigDecimal price;
+        BigDecimal iva;
 
+        System.out.println("Welcome!!");
 
-        System.out.println(product1.getCodeProduct());
-        System.out.println(product1.getDescriptionProduct());
-        System.out.println(product1.getNameProduct());
-        System.out.println(product1.getPriceProduct());
-        System.out.println(product1.getIvaProduct());
-        System.out.println(product1.getFullPrice());
+        do {
+            System.out.println("what product are you inserting?");
+            if (!errorCodeTypeProduct){
+                System.out.print("name of product: ");
+                name = userInput.nextLine();
+                System.out.print("description of product: ");
+                description = userInput.nextLine();
+                System.out.print("how much does it costs? ");
+                price = new BigDecimal(userInput.nextLine());
+                System.out.print("what is the taxation rate? ");
+                iva = new BigDecimal(userInput.nextLine());
+            }
+            System.out.println("1 for television");
+            System.out.println("2 for smartphone");
+            System.out.println("3 for earphones");
+            typeOfProduct = Integer.parseInt(userInput.nextLine());
+            if (typeOfProduct == 1){
+                // televisions
+
+            } else if (typeOfProduct == 2) {
+                // smartphone
+            } else if (typeOfProduct == 3) {
+                // earphones
+            }else {
+                System.out.println("invalid input");
+                errorCodeTypeProduct = true;
+            }
+        }while (!exitCode);
 
 
 
